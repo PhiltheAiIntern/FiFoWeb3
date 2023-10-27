@@ -1,73 +1,52 @@
-# NFT Staking App
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Randomly Changing 24x24 Color Array</title>
+</head>
+<body>
+    <h1>Randomly Changing 24x24 Color Array</h1>
+    <canvas id="colorCanvas" width="240" height="240"></canvas>
 
-## Introduction
+    <script>
+        // Get the canvas element
+        const canvas = document.getElementById('colorCanvas');
+        const ctx = canvas.getContext('2d');
+        const cellSize = 10;
+        const colors = ['#66ff00', 'white', 'black'];
 
-This example demonstrates a use of several thirdweb tools to create an NFT Staking application. In this example, users can stake their ERC721 NFTs and earn ERC20 tokens as a reward. It combines:
+        // Function to generate a random color
+        function getRandomColor() {
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
 
-- [NFT Drop contract](https://thirdweb.com/thirdweb.eth/DropERC721): To create a collection of NFTs that users can stake.
-- [Token contract](https://thirdweb.com/thirdweb.eth/TokenERC20): To create a token that users can earn as a reward for staking.
-- [NFT Staking contract](https://thirdweb.com/thirdweb.eth/NFTStake): To create a contract that users can stake their NFTs in, and earn tokens as a reward.
+        // Function to draw the grid with random colors
+        function drawGrid() {
+            for (let y = 0; y < 24; y++) {
+                for (let x = 0; x < 24; x++) {
+                    const color = getRandomColor();
+                    ctx.fillStyle = color;
+                    ctx.fillRect(x * cellSize, y * cellSize, cellSize, cellSize);
+                }
+            }
+        }
 
-## Using This Template
+        // Function to continuously update the canvas with random colors
+        function updateCanvasContinuously() {
+            // Clear the canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-Create a project using this example:
+            // Draw the grid with random colors
+            drawGrid();
 
-```bash
-npx thirdweb create --template nft-staking-app
-```
+            // Request the next animation frame to continue updating
+            requestAnimationFrame(updateCanvasContinuously);
+        }
 
-- Create an [NFT Drop](https://thirdweb.com/thirdweb.eth/DropERC721) contract using the dashboard.
-- Create a [Token](https://thirdweb.com/thirdweb.eth/TokenERC20) contract using the dashboard.
-- Create an [NFT Staking](https://thirdweb.com/thirdweb.eth/NFTStake) contract using the dashboard.
-- Approve the NFT Staking contract to transfer your tokens.
-- Deposit the tokens into the NFT Staking contract.
-- Update the information in the [contractAddresses.ts](./consts/contractAddresses.ts) file to
+        // Initial display
+        drawGrid();
 
-## Run Locally
-
-Install dependencies
-
-```bash
-  # npm
-  npm install
-
-  # yarn
-  yarn install
-```
-
-Start the server
-
-```bash
-  # npm
-  npm run start
-
-  # yarn
-  yarn start
-```
-
-## Environment Variables
-
-To run this project, you will need to add environment variables. Check the `.env.example` file for all the environment variables required and add it to `.env.local` file or set them up on your hosting provider.
-
-## Deployment
-
-Deploy a copy of your application to IPFS using the following command:
-
-```bash
-  yarn deploy
-```
-
-## Additional Resources
-
-- [Documentation](https://portal.thirdweb.com)
-- [Templates](https://thirdweb.com/templates)
-- [Video Tutorials](https://youtube.com/thirdweb_)
-- [Blog](https://blog.thirdweb.com)
-
-## Contributing
-
-Contributions and [feedback](https://feedback.thirdweb.com) are always welcome! Please check our [open source page](https://thirdweb.com/open-source) for more information.
-
-## Need help?
-
-For help, join the [discord](https://discord.gg/thirdweb) or visit our [support page](https://support.thirdweb.com).
+        // Start the continuous update
+        requestAnimationFrame(updateCanvasContinuously);
+    </script>
+</body>
+</html>
