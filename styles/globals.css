@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@font-face {
+  font-family: 'Silkscreen';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/silkscreen/v1/m8JXjfVPf62XiF7kO-i9YLNlaw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'NakaPixel'; /* Choose a name for your custom font */
+  src: url('/font/m8JXjfVPf62XiF7kO-i9YLNlaw.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.section {
+  margin-bottom: 0px; /* Adjust the value to control the spacing */
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  padding-bottom: 0;
+}
+
+.image-container {
+  width: 300px; /* Set the width and height as needed */
+  height: 200px;
+  background-size: cover;
+}
+
+.large-button  {
+  text-decoration: none !important; /* Use !important to ensure it takes precedence */
+  font-size: 24px; /* Set the font size to your desired size */
+  font-weight: bold; /* Make the text bold */
+  color: white; /* Set the text color to white */
+  background-color: #66ff00; /* Set the background color */
+  border: none; /* Remove the button border, if desired */
+  border-radius: 10px; /* Set the border radius to round the corners */
+}
+
+.large-button a {
+  display: inline-flex;
+  width: auto;
+  height: 4rem;
+  line-height: 4rem;
+  padding: 0 2rem;
+  vertical-align: middle;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.025rem;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  flex-direction: row-reverse;
+  transition: none;
+  text-decoration: none;
+}
+
+.h1.style3 {
+  margin: 0;
+  padding: 0;
+}
+
+.nakaPixelText {
+  font-family: 'NakaPixel', sans-serif;
+  font-size: 2rem; /* Adjust the font size as needed */
+  font-weight: 300;
+  letter-spacing: -0.25rem;
+  text-shadow: 0rem 0rem 0.75rem #66ff00;
+  color: white;
+}
+
+
+h2 {
+  font-size: 6rem;
+  color: white;
+  text-align: center;
+  font-family: 'NakaPixel', sans-serif;
+  margin: 0;
+  letter-spacing: -0.25rem;
+  width: 100%;
+  font-weight: 300;
+  text-shadow: 0rem 0rem 0.75rem #66ff00;
+}
+
+.text {
+  color: white; /* Set the text color to white */
+  font-family: 'Inter', sans-serif; /* Use the custom font-family 'Inter' with fallback to a generic sans-serif font */
+  font-size: 24px; /* Set the font size to 24 pixels (adjust as needed) */
+  margin-bottom: 0px; /* Add 20 pixels of space below the text */
+}
+
+.frame img {
+  margin-top: 100px; /* Add 20 pixels of top margin */
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --tw-color1: #a855f7;
+  --tw-color1-hover: #9333ea;
+}
+
+body {
+  background-image: url('/background/background.png');
+  background-size: cover; /* This will make the image cover the entire background */
+  background-repeat: no-repeat; /* Prevent image from repeating */
+  background-attachment: fixed; /* Fixed background, doesn't move with scrolling */
+}
+
+.container {
+  margin-top: 0; /* Adjust the margin-top value as needed to reduce the space */
+  
+}
+
+/* Center the text within the button */
+#container05 .button a {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+h1.style3 {
+  font-family: 'NakaPixel', sans-serif;
+  margin-top: 0; /* Adjust the margin-top value as needed to reduce the space */
+  /* Other styles for your h1 element */
+}
+
+h1.style3, h2.style3, h3.style3, p.style3 {
+  color: #FFFFFF;
+  font-family: 'Silkscreen', monospace;
+  letter-spacing: -0.25rem;
+  width: 100%;
+  font-size: 6em;
+  line-height: 1.125;
+  font-weight: 300;
+  text-shadow: 0rem 0rem 0.75rem #66ff00;
+  text-align: center; /* Add this line to center the text */
+}
+
+h1.style3 mark, h2.style3 mark, h3.style3 mark, p.style3 mark {
+  color: #1F1F1F;
+  background-color: transparent;
+}
+
+h1.style3 a, h2.style3 a, h3.style3 a, p.style3 a {
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 2rem;
+}
