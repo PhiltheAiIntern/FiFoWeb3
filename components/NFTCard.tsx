@@ -22,28 +22,29 @@ const NFTCard: FC<NFTCardProps> = ({ tokenId }) => {
   return (
     <>
       {nft && (
-        <div className={styles.nftBox}>
-          {nft.metadata && (
-            <ThirdwebNftMedia
-              metadata={nft.metadata}
-              className={styles.nftMedia}
-              style={{ width: '195px', height: '195px' }}
-            />
-          )}
-          <h3 style={{ fontFamily: 'NakaPixel, sans-serif', color: '#66ff00' }}>
-             {nft.metadata.name}
-          </h3>
-
-          <Web3Button
-            action={(contract) => contract?.call("withdraw", [[nft.metadata.id]])}
-            contractAddress={stakingContractAddress}
-          >
-             <h3 style={{ fontFamily: 'NakaPixel, sans-serif', color: '#3b830a' }}>
-             Layoff Papers
-          </h3>
-            
-          </Web3Button>
-        </div>
+        <div className={styles.nftBox} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        {nft.metadata && (
+          <ThirdwebNftMedia
+            metadata={nft.metadata}
+            className={styles.nftMedia}
+            style={{ width: '195px', height: '195px' }}
+          />
+        )}
+        <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+        {nft.metadata.name}
+          </h2>
+        
+        <Web3Button
+          action={(contract) => contract?.call("withdraw", [[nft.metadata.id]])}
+          contractAddress={stakingContractAddress}
+        >
+          <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+          Layoff Papers
+          </h2>
+           
+        </Web3Button>
+      </div>
+      
       )}
     </>
   );

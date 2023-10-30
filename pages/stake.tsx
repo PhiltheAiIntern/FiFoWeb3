@@ -48,7 +48,7 @@ const Stake: NextPage = () => {
     loadClaimableRewards();
   }, [address, contract]);
 
-  async function stakeNft(id: string) {
+    async function stakeNft(id: string) {
     if (!address) return;
 
     const isApproved = await nftDropContract?.isApproved(
@@ -67,7 +67,7 @@ const Stake: NextPage = () => {
 
   return (
     <div className={styles.container}>
-      <h2 style={{ color: 'white', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '6rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+      <h2 style={{ color: 'white', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '3rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
             Stake FiFo Phil
           </h2>
       <hr className={`${styles.divider} ${styles.spacerTop}`} />
@@ -76,7 +76,7 @@ const Stake: NextPage = () => {
         <ConnectWallet />
       ) : (
         <>
-        <h2 style={{ color: 'white', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '3rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+        <h2 style={{ color: 'white', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '1.5rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
         $FGem
           </h2>
           <div className={styles.tokenGrid}>
@@ -85,19 +85,25 @@ const Stake: NextPage = () => {
 
               <p className={styles.tokenValue}>
                 <b>
-                  {!claimableRewards
-                    ? "Loading..."
-                    : ethers.utils.formatUnits(claimableRewards, 18)}
+                 
                 </b>{" "}
+                <h2 style={{ color: '#020052', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '1.5rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+                {!claimableRewards
+                  ? "Loading..."
+                  : (Math.round(ethers.utils.formatUnits(claimableRewards, 18) * 1000) / 1000).toFixed(3)}&nbsp;{tokenBalance?.symbol}
+                </h2>
                 
-                {tokenBalance?.symbol}
               </p>
             </div>
             <div className={styles.tokenItem}>
             <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>Total $FGem</h2>
 
               <p className={styles.tokenValue}>
-                <b>{tokenBalance?.displayValue}</b> {tokenBalance?.symbol}
+                
+              <h2 style={{ color: '#020052', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '1.5rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+              <b>{tokenBalance?.displayValue}</b> {tokenBalance?.symbol}
+                </h2>
+                
 
               </p>
             </div>
@@ -131,7 +137,7 @@ const Stake: NextPage = () => {
               margin: 0,
               letterSpacing: '-0.25rem',
               width: '100%',
-              fontSize: '2rem',
+              fontSize: '1.5rem',
               fontWeight: 300,
               textShadow: '0rem 0rem 0.75rem #66ff00',
             }}>
@@ -140,13 +146,14 @@ const Stake: NextPage = () => {
           </Web3Button>
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
-          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '4rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
             Phils Working in the Mine
           </h2>
           <div className={styles.nftBoxGrid}>
             {stakedTokens &&
               stakedTokens[0]?.map((stakedToken: BigNumber) => (
                 <NFTCard
+                
                   tokenId={stakedToken.toNumber()}
                   key={stakedToken.toString()}
                 />
@@ -154,7 +161,7 @@ const Stake: NextPage = () => {
           </div>
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
-          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '4rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
           Phils on Layoff
           </h2>
           
