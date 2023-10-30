@@ -93,7 +93,7 @@ body {
 
 
 h2 {
-  font-size: 6rem;
+  font-size: 3rem;
   color: white;
   text-align: center;
   font-family: 'NakaPixel', sans-serif;
@@ -160,7 +160,7 @@ h1.style3, h2.style3, h3.style3, p.style3 {
   font-family: 'Silkscreen', monospace;
   letter-spacing: -0.25rem;
   width: 100%;
-  font-size: 6em;
+  font-size: 3em;
   line-height: 1.125;
   font-weight: 300;
   text-shadow: 0rem 0rem 0.75rem #66ff00;
