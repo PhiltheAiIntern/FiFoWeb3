@@ -1,12 +1,12 @@
 {
-  "homepage": "http://philtheaiintern.github.io/FiFoWeb3/",
+  "homepage": "https://philtheaiintern.github.io/FiFoWeb3/",
   "name": "fifomine",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "next start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build",
     "dev": "next dev",
     "build": "next build",
     "lint": "next lint"
