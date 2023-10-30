@@ -90,7 +90,7 @@ const Stake: NextPage = () => {
                 <h2 style={{ color: '#020052', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '1.5rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
                 {!claimableRewards
                   ? "Loading..."
-                  : (Math.round(ethers.utils.formatUnits(claimableRewards, 18) * 1000) / 1000).toFixed(3)}&nbsp;{tokenBalance?.symbol}
+                  : (Math.round(ethers.utils.formatUnits(claimableRewards, 18) * 1000) / 1000).toFixed(3)} {tokenBalance?.symbol}
                 </h2>
                 
               </p>
