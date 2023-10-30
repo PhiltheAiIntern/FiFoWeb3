@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { Web3Button } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";

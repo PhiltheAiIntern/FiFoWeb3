@@ -1,4 +1,3 @@
-/* eslint-disable */
 import type { NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -6,14 +5,11 @@ import styles from "../styles/Home.module.css";
 
 import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 
-
-
 const Home: NextPage = () => {
   const router = useRouter();
 
   return (
     <div className={styles.container}>
-      {/* Top Section */}
       <h1 className="h1 style3">FiFo Labs</h1>
       <h1 className={styles.h1} style={{ color: 'white', textAlign: 'center', fontSize: '24px' }}>
           20,000 unique personal Ai interns on the blockchain with commercial rights.
@@ -37,9 +33,7 @@ const Home: NextPage = () => {
       <br />
       <br />
       <div className="image-container" style={{ backgroundImage: `url('https://ipfs.io/ipfs/QmdpAUDqDT6xLFJgQVG1imFhLoiSMthmvKGmXb2BvAPhv7')`, backgroundSize: 'auto 100%', backgroundPosition: '50% 50%' }}>
-  {/* Content goes here */}
 </div>
-
 
 
 <a href="https://www.dextools.io/app/en/ether/pair-explorer/0xe5cf489df5fd1c1e3710bef745d044885f66504d" target="_blank" className={styles.h1} style={{ color: '#66ff00', textDecoration: 'none', fontSize: '24px', marginTop: '25px' }}>
@@ -97,12 +91,12 @@ Gecko Terminal
 <br />
 <h1 className="h1 style3">Staking is LIVE</h1>
 
-<a href="https://etherscan.io/address/0x374b2Dfa49D01Fe1EeDB9e58Db7Ee113D290840A" target="_blank" className={styles.h1} style={{ color: '#66ff00', textDecoration: 'none', fontSize: '24px', marginTop: '25px' }}>
-        FiFo Mine Etherscan&nbsp; 
-        </a>
+<a href="https://etherscan.io/address/0x374b2Dfa49D01Fe1EeDB9e58Db7Ee113D290840A" target={'"_blank"'} className={styles.h1} style={{ color: '#66ff00', textDecoration: 'none', fontSize: '24px', marginTop: '25px' }}>
+    FiFo Mine Etherscan
+</a>
 
         <h1 className={styles.h1} style={{ color: 'white', textAlign: 'center', fontSize: '24px' }}>
-          FiFo Phil works so You don't have too! S2E $FGem
+          FiFo Phil works so You dont have too! S2E $FGem
           </h1>
 
           <br />
@@ -127,12 +121,10 @@ Gecko Terminal
           role="button"
           onClick={() => router.push("/stake")}
         >
-          {/* Staking an NFT */}
           <Image src="/icons/token.webp" alt="token" width={64} height={64} />
           <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
   Stake FiFo Phil
 </h2>
-
 
           <p className={styles.selectBoxDescription}>
             Click to send Phil on a Quest in the Mine!
@@ -166,7 +158,6 @@ Gecko Terminal
           Why: FiFo Labs is here to create unique experiences for our growing community.
           </h1>
          
-
       </div>
           <br />
           <br />
@@ -182,10 +173,7 @@ Gecko Terminal
         All rights reserved.
     </h1>
 
-    <div className="image-container" style={{ backgroundImage: `url('https://ipfs.io/ipfs/QmZWKvA9PBxrzAEFKg6LhJxjhTSA8K64hK1DLmBiZSjfCK')`, backgroundSize: 'cover', backgroundPosition: '50% 50%' }}>
- 
-    
-</div>
+    <div className="image-container" style={{ backgroundImage: `url('https://ipfs.io/ipfs/QmZWKvA9PBxrzAEFKg6LhJxjhTSA8K64hK1DLmBiZSjfCK')`, backgroundSize: 'cover', backgroundPosition: '50% 50%' }}></div>
 
           <br />
           <br />

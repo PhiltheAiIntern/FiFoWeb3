@@ -1,4 +1,3 @@
-/* eslint-disable */
 import {
   ThirdwebNftMedia,
   useContract,

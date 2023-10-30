@@ -1,4 +1,3 @@
-/* eslint-disable */
 import {
   ConnectWallet,
   ThirdwebNftMedia,
@@ -84,17 +83,12 @@ const Stake: NextPage = () => {
             <div className={styles.tokenItem}>
             <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>Your earned $FGem</h2>
 
-
               <p className={styles.tokenValue}>
                 <b>
                   {!claimableRewards
                     ? "Loading..."
                     : ethers.utils.formatUnits(claimableRewards, 18)}
                 </b>{" "}
-                
-
-
-
                 
                 {tokenBalance?.symbol}
               </p>
@@ -104,8 +98,6 @@ const Stake: NextPage = () => {
 
               <p className={styles.tokenValue}>
                 <b>{tokenBalance?.displayValue}</b> {tokenBalance?.symbol}
-
-
 
               </p>
             </div>
@@ -128,7 +120,7 @@ const Stake: NextPage = () => {
               borderRadius: '0.5rem',
               flexDirection: 'row-reverse',
               transition: 'none',
-              backgroundColor: '#66ff00', // Add this line to set the background color
+              backgroundColor: '#66ff00', 
             }}
             
           >
@@ -146,7 +138,6 @@ const Stake: NextPage = () => {
               Claim
             </h2>
           </Web3Button>
-
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2 style={{ color: 'white', textAlign: 'center', fontSize: '4rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
