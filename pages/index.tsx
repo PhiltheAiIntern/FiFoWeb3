@@ -32,7 +32,7 @@ const Home: NextPage = () => {
       </div>
       <br />
       <br />
-      <img src="https://ipfs.io/ipfs/QmdpAUDqDT6xLFJgQVG1imFhLoiSMthmvKGmXb2BvAPhv7" alt="Your Alt Text" />
+      <div className="image-container" style={{ backgroundImage: `url('https://ipfs.io/ipfs/QmdpAUDqDT6xLFJgQVG1imFhLoiSMthmvKGmXb2BvAPhv7')`, backgroundSize: 'auto 100%', backgroundPosition: '50% 50%' }}></div>
 
 <a href="https://www.dextools.io/app/en/ether/pair-explorer/0xe5cf489df5fd1c1e3710bef745d044885f66504d" target="_blank" className={styles.h1} style={{ color: '#66ff00', textDecoration: 'none', fontSize: '24px', marginTop: '25px' }}>
     Dex Tools
@@ -83,8 +83,9 @@ Gecko Terminal
 </div>
       <br />
       <br />
-      <img src="https://ipfs.io/ipfs/QmUHz43wSKm9UorWdjTTWU6EUZFRsj5b9SwCCqo9JpBsRa" alt="Your Alt Text" />
-
+      
+      <div className="image-container" style={{ backgroundImage: `url('https://ipfs.io/ipfs/QmUHz43wSKm9UorWdjTTWU6EUZFRsj5b9SwCCqo9JpBsRa')`, backgroundSize: 'cover', backgroundPosition: '50% 50%' }}></div>
+      
 <br />
 <br />
 <h1 className="h1 style3">Staking is LIVE</h1>
@@ -171,8 +172,7 @@ Gecko Terminal
         All rights reserved.
     </h1>
 
-    <img src="https://ipfs.io/ipfs/QmZWKvA9PBxrzAEFKg6LhJxjhTSA8K64hK1DLmBiZSjfCK" alt="Your Alt Text" />
-
+    <div className="image-container" style={{ backgroundImage: `url('https://ipfs.io/ipfs/QmZWKvA9PBxrzAEFKg6LhJxjhTSA8K64hK1DLmBiZSjfCK')`, backgroundSize: 'cover', backgroundPosition: '50% 50%' }}></div>
 
           <br />
           <br />
