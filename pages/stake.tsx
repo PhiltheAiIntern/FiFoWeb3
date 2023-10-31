@@ -76,34 +76,26 @@ const Stake: NextPage = () => {
         <ConnectWallet />
       ) : (
         <>
-        <h2 style={{ color: 'white', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '1.5rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-        $FGem
-          </h2>
+        
           <div className={styles.tokenGrid}>
             <div className={styles.tokenItem}>
-            <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>Your earned $FGem</h2>
-
-
-
+            <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>You earned</h2>
 
               <p className={styles.tokenValue}>
                 <b>
-                 
                 </b>{" "}
 
+                <h2 className={styles.nakaPixelText} style={{ color: '#020052' }}>
+  {!claimableRewards
+    ? "Loading..."
+    : parseFloat(ethers.utils.formatUnits(claimableRewards, 18)).toFixed(3)} {tokenBalance?.symbol}
+</h2>
 
                 
-                <h2 className={styles.nakaPixelText} > 
-                {!claimableRewards
-                    ? "Loading..."
-                    : ethers.utils.formatUnits(claimableRewards, 18)} {tokenBalance?.symbol}</h2> 
-                
-              </p>
-
-
+                  </p>
             </div>
             <div className={styles.tokenItem}>
-            <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>Total $FGem</h2>
+            <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>Total Owned</h2>
 
               <p className={styles.tokenValue}>
                 
@@ -154,7 +146,7 @@ const Stake: NextPage = () => {
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-            Phils Working in the Mine
+            Phils in the Mine
           </h2>
           <div className={styles.nftBoxGrid}>
             {stakedTokens &&
