@@ -4,3 +4,5 @@ export const tokenContractAddress =
   "0xF853Fa36113e54aFc3F6E7349C665BA872a73761";
 export const stakingContractAddress =
   "0x374b2Dfa49D01Fe1EeDB9e58Db7Ee113D290840A";
+  export const nftNakaPhlipAddress =
+  "0x75a332E626a0B421C3c5C405474b9727aDB5dDff";
