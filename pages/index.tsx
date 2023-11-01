@@ -39,14 +39,30 @@ const Home: NextPage = () => {
         <div className="wrapper">
           <div className="inner" data-onvisible-trigger="1">
             <button className="large-button">
-                <a href="https://mirror.xyz/0x1Fc5fdF0C51763A48e48Bcaa737C5FfE38A648F3/a81NcMuGq7QY01TaLw11Ivs7ruikIEPZHcKTmU34HIQ" target="_blank">
-                Whitepaper
+            <a href="https://mirror.xyz/0x1Fc5fdF0C51763A48e48Bcaa737C5FfE38A648F3/a81NcMuGq7QY01TaLw11Ivs7ruikIEPZHcKTmU34HIQ" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#020052', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+            Whitepaper 
+                
+                
                 </a>
             </button>
           </div>
         </div>
       </div>
-
+      <br />
+      <div id="container05" className="style1 container default">
+        <div className="wrapper">
+          <div className="inner" data-onvisible-trigger="1">
+            <button className="large-button">
+            <a href="https://twitter.com/FiFoLabs/status/1713384015141699675" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#020052', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+            Staking Thread
+            
+                
+                </a>
+            </button>
+          </div>
+        </div>
+        
+    </div>
         <div>
 
       <div className={styles.nftBoxGrid}>
@@ -119,8 +135,9 @@ FiFo Phil works so You dont have too! S2E $FGem
             <div className="wrapper">
               <div className="inner" data-onvisible-trigger="1">
                 <button className="large-button">
-                  <a href="https://youtu.be/iiE7-mihBCU?feature=shared" target="_blank">
-                  Ai Phils
+                <a href="https://youtu.be/iiE7-mihBCU?feature=shared" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#020052', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+                Ai Phils 
+                  
                   </a>
                 </button>
               </div>
@@ -145,19 +162,8 @@ height: '50vh', // Adjust the height as needed
 <br />
 
 
-<div id="container05" className="style1 container default">
-        <div className="wrapper">
-          <div className="inner" data-onvisible-trigger="1">
-            <button className="large-button">
-                <a href="https://twitter.com/FiFoLabs/status/1713384015141699675" target="_blank">
-                Staking Thread
-                </a>
-            </button>
-          </div>
-        </div>
-        
-    </div>
 
+<br />
     <h1 className="style3">WE ARE Fifo LABs</h1>
         <br />
         <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
@@ -200,9 +206,9 @@ height: '50vh', // Adjust the height as needed
    <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
    Created by&nbsp;
          </h2>
-         <a href="https://twitter.com/FiFoLabs" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#66ff00', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
-        FiFo Labs&nbsp; 
-        </a>
+         <a href="https://twitter.com/FiFoLabs" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#020052', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+         FiFo Labs&nbsp; 
+         </a>
         <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
         All rights reserved.
          </h2>
