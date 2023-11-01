@@ -67,6 +67,8 @@ const Stake: NextPage = () => {
 
   return (
     <div className={styles.container}>
+      <ConnectWallet />
+      <br />
       <h2 style={{ color: 'white', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '3rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
             Stake FiFo Phil
           </h2>

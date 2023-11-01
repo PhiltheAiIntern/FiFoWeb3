@@ -3,13 +3,15 @@ import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { nftNakaPhlipAddress } from "../consts/contractAddresses";
 import styles from "../styles/Home.module.css";
-
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 const Mint: NextPage = () => {
   const router = useRouter();
 
   return (
     <div className={styles.container}>
+      <ConnectWallet/>
+      <br />
         <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
         Naka Phlip Mint
           </h2>

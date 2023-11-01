@@ -4,12 +4,21 @@ import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
 
 import { ThirdwebSDK } from "@thirdweb-dev/sdk";
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 const Home: NextPage = () => {
   const router = useRouter();
 
   return (
+    
     <div className={styles.container}>
+
+
+      <ConnectWallet/>
+
+
+
+      <br />
       <h1 className="h1 style3">FiFo Labs</h1>
       <br />
       <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
@@ -33,8 +42,8 @@ const Home: NextPage = () => {
     width: '100%',
     height: '50vh', // Adjust the height as needed
 }}></div>
+<br />
 
-      <br />
       <div id="container05" className="style1 container default">
         <div className="wrapper">
           <div className="inner" data-onvisible-trigger="1">
@@ -49,12 +58,19 @@ const Home: NextPage = () => {
         </div>
       </div>
       <br />
+      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+      Check out the Twitter Thread for staking instructions
+         </h2>   
+      
+
+
+      <br />
       <div id="container05" className="style1 container default">
         <div className="wrapper">
           <div className="inner" data-onvisible-trigger="1">
             <button className="large-button">
             <a href="https://twitter.com/FiFoLabs/status/1713384015141699675" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#020052', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-            Staking Thread
+            Thread
             
                 
                 </a>
