@@ -94,9 +94,10 @@ const Home: NextPage = () => {
             
           </p>
         </div>
-
-        <h1 className="h1 style3">Staking is LIVE</h1>
-
+       
+        <h1 className="h1 style3" style={{ margin: '40px 40px' }}>Staking is LIVE</h1> {/* Add margin style to h1 element */}
+        
+        
         <div
           className={styles.optionSelectBox}
           role="button"
@@ -159,6 +160,13 @@ FiFo Phil works so You dont have too! S2E $FGem
               </div>
             </div>
           </div>
+          <br />
+          <a href="https://looksrare.org/collections/0x75a332E626a0B421C3c5C405474b9727aDB5dDff?queryID=19603e03ef4ae0e029229b900ce0b1be" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#ffffff', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00'}}>
+          Looks Rare
+          </a>
+          <a href="https://x2y2.io/collection/nakaphlip/items" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#ffffff', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00'}}>
+          X2Y2
+          </a>
 
           <br />
 
