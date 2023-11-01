@@ -38,7 +38,62 @@ const Mint: NextPage = () => {
 
 <br />
 <br />
+<div style={{ display: 'flex', gap: '10px' }}>
+<Web3Button
+              theme="dark"
+              contractAddress={nftNakaPhlipAddress}
+              action={(contract) => contract.erc721.claim(1)}
+              onSuccess={() => {
+                alert("NFT Claimed!");
+                router.push("/stake");
+              }}
+              onError={(error) => {
+                alert(error);
+              }}
+            >
+              <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+              Mint 1 Phlips
+                </h2>
 
+      </Web3Button>
+
+      <Web3Button
+              theme="dark"
+              contractAddress={nftNakaPhlipAddress}
+              action={(contract) => contract.erc721.claim(2)}
+              onSuccess={() => {
+                alert("NFT Claimed!");
+                router.push("/stake");
+              }}
+              onError={(error) => {
+                alert(error);
+              }}
+            >
+              <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+              Mint 2 Phlips
+                </h2>
+
+      </Web3Button>
+
+      <Web3Button
+              theme="dark"
+              contractAddress={nftNakaPhlipAddress}
+              action={(contract) => contract.erc721.claim(3)}
+              onSuccess={() => {
+                alert("NFT Claimed!");
+                router.push("/stake");
+              }}
+              onError={(error) => {
+                alert(error);
+              }}
+            >
+              <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+              Mint 3 Phlips
+                </h2>
+
+      </Web3Button>
+</div>
+      <br />
               <div id="container05" className="style1 container default">
                   <div className="wrapper">
                         <div className="inner" data-onvisible-trigger="1">
@@ -52,6 +107,7 @@ const Mint: NextPage = () => {
 
                         </div>
                   </div>
+                  
         <br />
         <br />
               </div>
