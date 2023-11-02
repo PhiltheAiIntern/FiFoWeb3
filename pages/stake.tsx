@@ -36,6 +36,14 @@ const Stake: NextPage = () => {
   const { data: stakedTokens } = useContractRead(contract, "getStakeInfo", [
     address,
   ]);
+  if (stakedTokens && stakedTokens.length > 0) {
+    const stakedTokenIdsBigNumbers = stakedTokens[0];
+    const stakedTokenIdsStrings = stakedTokenIdsBigNumbers.map((bigNumber) => bigNumber.toString());
+    console.log(stakedTokenIdsStrings);
+  } else {
+    console.log("No staked tokens to display.");
+  }
+
 
   useEffect(() => {
     if (!contract || !address) return;
@@ -72,6 +80,8 @@ const Stake: NextPage = () => {
       <h2 style={{ color: 'white', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '3rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
             Stake FiFo Phil
           </h2>
+
+
       <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
       {!address ? (
@@ -88,10 +98,10 @@ const Stake: NextPage = () => {
                 </b>{" "}
 
                 <h2 className={styles.nakaPixelText} style={{ color: '#020052' }}>
-  {!claimableRewards
-    ? "Loading..."
-    : parseFloat(ethers.utils.formatUnits(claimableRewards, 18)).toFixed(3)} {tokenBalance?.symbol}
-</h2>
+                    {!claimableRewards
+                    ? "Loading..."
+                    : parseFloat(ethers.utils.formatUnits(claimableRewards, 18)).toFixed(3)} {tokenBalance?.symbol}
+                </h2>
 
                 
                   </p>
@@ -101,9 +111,10 @@ const Stake: NextPage = () => {
 
               <p className={styles.tokenValue}>
                 
-              <h2 style={{ color: '#020052', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '1.5rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-              <b>{tokenBalance?.displayValue}</b> {tokenBalance?.symbol}
-                </h2>
+              <h2 className={styles.nakaPixelText} style={{ color: '#020052' }}>
+                <b>{tokenBalance ? parseFloat(tokenBalance.displayValue).toFixed(3) : null}</b> {tokenBalance?.symbol}
+              </h2>
+
                 
 
               </p>
@@ -150,7 +161,28 @@ const Stake: NextPage = () => {
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
             Phils in the Mine
-          </h2>
+            </h2>
+
+            <br />
+
+            <Web3Button
+              action={(contract) => {
+                if (!nft) {
+                  // Handle the case where nft is not defined
+                  console.error('NFT is not defined');
+                  return;
+                }
+                
+                contract?.call("withdraw", [stakedTokenIdsBigNumbers.map((bigNumber) => bigNumber.toString())]); // Assuming stakedTokenIdsStrings is defined
+              }}
+              contractAddress={stakingContractAddress}
+            >
+              <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+                Layoff ALL
+              </h2>
+          </Web3Button>
+
+          
           <div className={styles.nftBoxGrid}>
             {stakedTokens &&
               stakedTokens[0]?.map((stakedToken: BigNumber) => (
