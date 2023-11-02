@@ -37,13 +37,18 @@ const Stake: NextPage = () => {
     address,
   ]);
 
+  // Define stakedTokenIdsBigNumbers
+  let stakedTokenIdsBigNumbers: BigNumber[] | undefined;
+
   if (stakedTokens && stakedTokens.length > 0) {
-    const stakedTokenIdsBigNumbers = stakedTokens[0];
+    stakedTokenIdsBigNumbers = stakedTokens[0];
     const stakedTokenIdsStrings = stakedTokenIdsBigNumbers.map((bigNumber) => bigNumber.toString());
     console.log(stakedTokenIdsStrings);
   } else {
     console.log("No staked tokens to display.");
   }
+
+
   useEffect(() => {
     if (!contract || !address) return;
 
@@ -94,14 +99,14 @@ const Stake: NextPage = () => {
 
               <p className={styles.tokenValue}>
                 <b>
-                </b>{" "}
+                
 
                 <h2 className={styles.nakaPixelText} style={{ color: '#020052' }}>
                     {!claimableRewards
                     ? "Loading..."
                     : parseFloat(ethers.utils.formatUnits(claimableRewards, 18)).toFixed(3)} {tokenBalance?.symbol}
                 </h2>
-
+                </b>{" "}
                 
                   </p>
             </div>
