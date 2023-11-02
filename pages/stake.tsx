@@ -36,6 +36,7 @@ const Stake: NextPage = () => {
   const { data: stakedTokens } = useContractRead(contract, "getStakeInfo", [
     address,
   ]);
+
   if (stakedTokens && stakedTokens.length > 0) {
     const stakedTokenIdsBigNumbers = stakedTokens[0];
     const stakedTokenIdsStrings = stakedTokenIdsBigNumbers.map((bigNumber) => bigNumber.toString());
@@ -43,8 +44,6 @@ const Stake: NextPage = () => {
   } else {
     console.log("No staked tokens to display.");
   }
-
-
   useEffect(() => {
     if (!contract || !address) return;
 
