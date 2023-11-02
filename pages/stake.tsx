@@ -167,7 +167,7 @@ const Stake: NextPage = () => {
 
             <Web3Button
               action={(contract) => {
-                if (!nft) {
+                if (!stakedTokens) {
                   // Handle the case where nft is not defined
                   console.error('NFT is not defined');
                   return;
