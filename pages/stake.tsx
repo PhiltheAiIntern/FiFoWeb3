@@ -85,34 +85,52 @@ const Stake: NextPage = () => {
         
         <div className={styles.tokenGrid}>
           <div className={styles.tokenItem}>
-            <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>You earned</h2>
+            <h2 className={styles.nakaPixelText} style={{ color: '#66ff00' }}>Mined Gems</h2>
             <div className={styles.tokenValue}>
               <b>
-                <h2 className={styles.nakaPixelText} style={{ color: '#020052' }}>
+                <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>
                   {!claimableRewards
                     ? "Loading..."
                     : parseFloat(ethers.utils.formatUnits(claimableRewards, 18)).toFixed(3)}
+                    
+                    {' '}
+
+                    {tokenBalance?.symbol}
+                    
                 </h2>
-              </b>{" "}
-              {tokenBalance?.symbol}
+               
+              </b>{""}
+              
+              
             </div>
+
           </div>
         </div>
                 <div className={styles.tokenItem}>
-                  <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>Total Owned</h2>
+                  <h2 className={styles.nakaPixelText} style={{ color: '#66ff00' }}>Total Bag</h2>
                   <div className={styles.tokenValue}>
-                    <h2 className={styles.nakaPixelText} style={{ color: '#020052' }}>
+                    <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>
                       <b>
                         {tokenBalance ? parseFloat(tokenBalance.displayValue).toFixed(3) : null}
+                        
+                        {' '}
+                        
+
+                          {tokenBalance?.symbol}
+                       
+                </b>{" "}
+                       
                       
-                      {tokenBalance?.symbol}
-                      </b>{" "}
+
+                      
                     </h2>
+                    
                   </div>
+                  
                 </div>
                 <br />
 
-
+<div>
           <Web3Button
             action={(contract) => contract.call("claimRewards")}
             contractAddress={stakingContractAddress}
@@ -148,6 +166,7 @@ const Stake: NextPage = () => {
               Claim
             </h2>
           </Web3Button>
+          </div>
           
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
@@ -155,7 +174,7 @@ const Stake: NextPage = () => {
             Phils in the Mine
             </h2>
 
-            <br />
+<br />
 
             <Web3Button
               action={(contract) => {
@@ -191,46 +210,54 @@ const Stake: NextPage = () => {
           <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
           Phils on Layoff
           </h2>
-          <br />
+<br />
 
           <Web3Button
-  action={async (contract) => {
-    if (!ownedNFTIds || ownedNFTIds.length === 0) {
-      // Handle the case where there are no owned NFTs
-      console.error('No owned NFTs to stake.');
-      return;
-    }
+              action={async (contract) => {
+                if (!ownedNFTIds || ownedNFTIds.length === 0) {
+                  // Handle the case where there are no owned NFTs
+                  console.error('No owned NFTs to stake.');
+                  return;
+                }
 
-    // Convert ownedNFTIds to an array of numbers
-    const nftIdsToStake = ownedNFTIds.map((id) => parseInt(id));
+                // Convert ownedNFTIds to an array of numbers
+                const nftIdsToStake = ownedNFTIds.map((id) => parseInt(id));
 
-    // Stake all owned NFTs
-    await contract?.call("stake", [nftIdsToStake]);
-  }}
-  contractAddress={stakingContractAddress}
->
-  <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-    Stake All
-  </h2>
-</Web3Button>
+                // Stake all owned NFTs
+                await contract?.call("stake", [nftIdsToStake]);
+              }}
+              contractAddress={stakingContractAddress}
+            >
+              <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+                Stake All
+              </h2>
+          </Web3Button>
 <br />
           
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
               
-              <div className={styles.nftBox} key={nft.metadata.id.toString()}>
+              <div className={styles.nftBox} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}
+               key={nft.metadata.id.toString()}>
                  
                 <ThirdwebNftMedia
                   metadata={nft.metadata}
                   className={styles.nftMedia}
                   style={{ width: '190px', height: '190px' }}
                 />
-                <h3>{nft.metadata.name}</h3>
+
+<h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+{nft.metadata.name}
+          </h2>
+
+
                 <Web3Button
                   contractAddress={stakingContractAddress}
                   action={() => stakeNft(nft.metadata.id)}
-                >
-                  Goto Work
+                ><h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+                Goto Work
+              </h2>
+                  
                 </Web3Button>
               </div>
             ))}

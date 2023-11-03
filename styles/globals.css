@@ -87,21 +87,21 @@ body {
   font-size: 2rem; /* Adjust the font size as needed */
   font-weight: 300;
   letter-spacing: -0.25rem;
-  text-shadow: 0rem 0rem 0.75rem #66ff00;
+ 
   color: white;
 }
 
 
 h2 {
   font-size: 3rem;
-  color: white;
+  color: #FFFFFF;
   text-align: center;
   font-family: 'NakaPixel', sans-serif;
   margin: 0;
   letter-spacing: -0.25rem;
   width: 100%;
   font-weight: 300;
-  text-shadow: 0rem 0rem 0.75rem #66ff00;
+  
 }
 
 .text {
@@ -158,12 +158,12 @@ h1.style3 {
 h1.style3, h2.style3, h3.style3, p.style3 {
   color: #FFFFFF;
   font-family: 'Silkscreen', monospace;
-  letter-spacing: -0.25rem;
+  letter-spacing: -0.1rem;
   width: 100%;
-  font-size: 3em;
+  font-size: 1em;
   line-height: 1.125;
   font-weight: 300;
-  text-shadow: 0rem 0rem 0.75rem #66ff00;
+
   text-align: center; /* Add this line to center the text */
 }
 

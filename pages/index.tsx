@@ -12,22 +12,23 @@ const Home: NextPage = () => {
   return (
     
     <div className={styles.container}>
-
-
       <ConnectWallet/>
-
-
-
       <br />
-      <h1 className="h1 style3">FiFo Labs</h1>
+      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+      FiFo Labs
+      </h2>
       <br />
-      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-              Presents
-                    </h2>
+      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.0rem', width: '100%', fontWeight: '300' }}>
+      Presents
+      </h2>
+            
+      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '4.75rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+      Naka Phlip
+      </h2>
       <br />
-      <h1 className="h1 style3">Naka Phlip</h1>
+      
       <br />
-      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300' }}>
       20,000 more of the same unique crypto investors on the blockchain without commercial rights.
          </h2>   
          <br />
@@ -35,34 +36,29 @@ const Home: NextPage = () => {
  
       
       <div className="image-container" style={{
-    backgroundImage: `url('https://ipfs.io/ipfs/QmUHz43wSKm9UorWdjTTWU6EUZFRsj5b9SwCCqo9JpBsRa')`,
-    backgroundSize: 'contain', // Try using 'contain'
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center center',
-    width: '100%',
-    height: '50vh', // Adjust the height as needed
-}}></div>
+          backgroundImage: `url('https://ipfs.io/ipfs/QmUHz43wSKm9UorWdjTTWU6EUZFRsj5b9SwCCqo9JpBsRa')`,
+          backgroundSize: 'contain', // Try using 'contain'
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center center',
+          width: '100%',
+          height: '50vh', // Adjust the height as needed
+      }}></div>
 <br />
-
       <div id="container05" className="style1 container default">
         <div className="wrapper">
           <div className="inner" data-onvisible-trigger="1">
             <button className="large-button">
-            <a href="https://mirror.xyz/0x1Fc5fdF0C51763A48e48Bcaa737C5FfE38A648F3/a81NcMuGq7QY01TaLw11Ivs7ruikIEPZHcKTmU34HIQ" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#020052', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-            Whitepaper 
-                
-                
+                <a href="https://mirror.xyz/0x1Fc5fdF0C51763A48e48Bcaa737C5FfE38A648F3/a81NcMuGq7QY01TaLw11Ivs7ruikIEPZHcKTmU34HIQ" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#020052', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+                  Whitepaper 
                 </a>
             </button>
           </div>
         </div>
       </div>
-      <br />
-      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+  <br />
+      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300' }}>
       Check out the Twitter Thread for staking instructions
          </h2>   
-      
-
 
       <br />
       <div id="container05" className="style1 container default">
@@ -70,15 +66,12 @@ const Home: NextPage = () => {
           <div className="inner" data-onvisible-trigger="1">
             <button className="large-button">
             <a href="https://twitter.com/FiFoLabs/status/1713384015141699675" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#020052', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-            Thread
-            
-                
-                </a>
+                Thread 
+            </a>
             </button>
           </div>
-        </div>
-        
-    </div>
+        </div>  
+      </div>
         <div>
 
       <div className={styles.nftBoxGrid}>
@@ -90,14 +83,13 @@ const Home: NextPage = () => {
           {/* Mint a new NFT */}
           <Image src="/icons/drop.webp" alt="drop" width={64} height={64} />
           <h2 className={styles.selectBoxTitle}>Mint Naka Phlip</h2>
-          <p className={styles.selectBoxDescription}>
-            
-          </p>
+          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+          "Copymint"
+          </h2>
+                    
         </div>
-       
-        <h1 className="h1 style3" style={{ margin: '40px 40px' }}>Staking is LIVE</h1> {/* Add margin style to h1 element */}
-        
-        
+      
+      
         <div
           className={styles.optionSelectBox}
           role="button"
@@ -107,16 +99,16 @@ const Home: NextPage = () => {
 
           <h2 className={styles.selectBoxTitle}> Stake FiFo Phil</h2>
           
-          <p className={styles.selectBoxDescription}>
-            
-          </p>
+          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+          A.i. Personal Intern
+          </h2>
           </div>
         </div>
 
         
 </div>
 <br />
-<h2 style={{ color: 'white', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+<h2 style={{ color: 'white', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300' }}>
 FiFo Phil works so You dont have too! S2E $FGem
           </h2>
 
@@ -136,7 +128,7 @@ FiFo Phil works so You dont have too! S2E $FGem
         FiFo Labs Twitter
         </a>
 
-        <h2 style={{ color: '#66ff00', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+        <h2 style={{ color: '#66ff00', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300'}}>
         FiFoLabs69@gmail.com
           </h2>
 
@@ -188,29 +180,33 @@ height: '50vh', // Adjust the height as needed
 
 
 <br />
-    <h1 className="style3">WE ARE Fifo LABs</h1>
-        <br />
-        <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+<h2 style={{ color: 'white', textAlign: 'center', fontSize: '5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+WE ARE Fifo LABs
+      </h2>
+
+<br />
+
+        <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300' }}>
           est. Apr 2023
           </h2>
           <br />
-          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.25rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.25rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300' }}>
           Who: A group of artists, networkers, businessmen, and developers looking to take back the NFT space.
           </h2>
           <br />
-          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.25rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.25rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300' }}>
           What: FiFo Labs, $FiFo staking, and our genesis PFP “FiFo Phil” was the beginning of FiFo Labs.
           </h2>
           <br />
-          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.25rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.25rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300' }}>
           Where: Ethereum and possibly more blockchain(s) in the future.
           </h2>
           <br />
-          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.25rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.25rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300' }}>
           When: FiFo Labs started in late 2023, but the team consists of creatives that have worked together 3+ years.
           </h2>
           <br />
-          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.25rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.25rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300' }}>
           Why: FiFo Labs is here to create unique experiences for our growing community.
          </h2>
 
