@@ -118,6 +118,7 @@ const Stake: NextPage = () => {
 
                           {tokenBalance?.symbol}
                        
+                       
                 </b>{" "}
                        
                       
