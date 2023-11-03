@@ -21,21 +21,13 @@ import styles from "../styles/Home.module.css";
 
 const Stake: NextPage = () => {
   const address = useAddress();
-  const { contract: nftDropContract } = useContract(
-    nftDropContractAddress,
-    "nft-drop"
-  );
-  const { contract: tokenContract } = useContract(
-    tokenContractAddress,
-    "token"
-  );
+  const { contract: nftDropContract } = useContract(nftDropContractAddress, "nft-drop");
+  const { contract: tokenContract } = useContract(tokenContractAddress, "token");
   const { contract, isLoading } = useContract(stakingContractAddress);
   const { data: ownedNfts } = useOwnedNFTs(nftDropContract, address);
   const { data: tokenBalance } = useTokenBalance(tokenContract, address);
   const [claimableRewards, setClaimableRewards] = useState<BigNumber>();
-  const { data: stakedTokens } = useContractRead(contract, "getStakeInfo", [
-    address,
-  ]);
+  const { data: stakedTokens } = useContractRead(contract, "getStakeInfo", [address]);
 
   // Define stakedTokenIdsBigNumbers
   let stakedTokenIdsBigNumbers: BigNumber[] | undefined;
@@ -48,6 +40,7 @@ const Stake: NextPage = () => {
     console.log("No staked tokens to display.");
   }
 
+  const ownedNFTIds = ownedNfts?.map((nft) => nft?.metadata?.id?.toString() || "");
 
   useEffect(() => {
     if (!contract || !address) return;
@@ -60,21 +53,18 @@ const Stake: NextPage = () => {
     loadClaimableRewards();
   }, [address, contract]);
 
-    async function stakeNft(id: string) {
+  async function stakeNft(id: string) {
     if (!address) return;
 
-    const isApproved = await nftDropContract?.isApproved(
-      address,
-      stakingContractAddress
-    );
+    const isApproved = await nftDropContract?.isApproved(address, stakingContractAddress);
     if (!isApproved) {
       await nftDropContract?.setApprovalForAll(stakingContractAddress, true);
     }
-    await contract?.call("stake", [[id]]);
+    await contract?.call("stake", [id]);
   }
 
   if (isLoading) {
-    return <div>...just wait retards</div>;
+    return <div>...just wait</div>;
   }
 
   return (
@@ -93,37 +83,35 @@ const Stake: NextPage = () => {
       ) : (
         <>
         
-          <div className={styles.tokenGrid}>
-            <div className={styles.tokenItem}>
+        <div className={styles.tokenGrid}>
+          <div className={styles.tokenItem}>
             <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>You earned</h2>
-
-              <p className={styles.tokenValue}>
-                <b>
-                
-
+            <div className={styles.tokenValue}>
+              <b>
                 <h2 className={styles.nakaPixelText} style={{ color: '#020052' }}>
-                    {!claimableRewards
+                  {!claimableRewards
                     ? "Loading..."
-                    : parseFloat(ethers.utils.formatUnits(claimableRewards, 18)).toFixed(3)} {tokenBalance?.symbol}
+                    : parseFloat(ethers.utils.formatUnits(claimableRewards, 18)).toFixed(3)}
                 </h2>
-                </b>{" "}
-                
-                  </p>
-            </div>
-            <div className={styles.tokenItem}>
-            <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>Total Owned</h2>
-
-              <p className={styles.tokenValue}>
-                
-              <h2 className={styles.nakaPixelText} style={{ color: '#020052' }}>
-                <b>{tokenBalance ? parseFloat(tokenBalance.displayValue).toFixed(3) : null}</b> {tokenBalance?.symbol}
-              </h2>
-
-                
-
-              </p>
+              </b>{" "}
+              {tokenBalance?.symbol}
             </div>
           </div>
+        </div>
+                <div className={styles.tokenItem}>
+                  <h2 className={styles.nakaPixelText} style={{ color: '#ffffff' }}>Total Owned</h2>
+                  <div className={styles.tokenValue}>
+                    <h2 className={styles.nakaPixelText} style={{ color: '#020052' }}>
+                      <b>
+                        {tokenBalance ? parseFloat(tokenBalance.displayValue).toFixed(3) : null}
+                      
+                      {tokenBalance?.symbol}
+                      </b>{" "}
+                    </h2>
+                  </div>
+                </div>
+                <br />
+
 
           <Web3Button
             action={(contract) => contract.call("claimRewards")}
@@ -186,6 +174,7 @@ const Stake: NextPage = () => {
               </h2>
           </Web3Button>
 
+
           
           <div className={styles.nftBoxGrid}>
             {stakedTokens &&
@@ -202,6 +191,29 @@ const Stake: NextPage = () => {
           <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
           Phils on Layoff
           </h2>
+          <br />
+
+          <Web3Button
+  action={async (contract) => {
+    if (!ownedNFTIds || ownedNFTIds.length === 0) {
+      // Handle the case where there are no owned NFTs
+      console.error('No owned NFTs to stake.');
+      return;
+    }
+
+    // Convert ownedNFTIds to an array of numbers
+    const nftIdsToStake = ownedNFTIds.map((id) => parseInt(id));
+
+    // Stake all owned NFTs
+    await contract?.call("stake", [nftIdsToStake]);
+  }}
+  contractAddress={stakingContractAddress}
+>
+  <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+    Stake All
+  </h2>
+</Web3Button>
+<br />
           
           <div className={styles.nftBoxGrid}>
             {ownedNfts?.map((nft) => (
