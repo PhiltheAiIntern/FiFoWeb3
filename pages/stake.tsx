@@ -62,10 +62,14 @@ const Stake: NextPage = () => {
       await nftDropContract?.setApprovalForAll(stakingContractAddress, true);
     }
     await contract?.call("stake", [id]);
+    function stakeNft(ids: string[]) {
+      // Your function implementation here
+    }
+    
   }
-
+  
   if (isLoading) {
-    return <div>...just wait</div>;
+    return <div>...just wait retar...</div>;
   }
 
   return (
@@ -254,8 +258,10 @@ const Stake: NextPage = () => {
 
     
               <Web3Button
+
+              
   contractAddress={stakingContractAddress}
-  action={() => stakeNft([nft.metadata.id] as string[])} // Use a type assertion
+  action={() => stakeNft([nft.metadata.id])}
 >
   <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
     Goto Work
