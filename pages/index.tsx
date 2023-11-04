@@ -228,6 +228,7 @@ WE ARE Fifo LABs
     width: '100%',
     height: '50vh', // Adjust the height as needed
 }}></div>
+<br />
    <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
    Created by&nbsp;
          </h2>
@@ -237,7 +238,8 @@ WE ARE Fifo LABs
         <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
         All rights reserved.
          </h2>
-         
+         <br />
+         <br />
     </div>
     
   );

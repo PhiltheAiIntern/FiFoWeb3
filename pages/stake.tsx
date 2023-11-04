@@ -55,6 +55,7 @@ const Stake: NextPage = () => {
 
   async function stakeNft(id: string) {
     if (!address) return;
+    console.log("Staking NFT with ID:", id); // Log the ID
 
     const isApproved = await nftDropContract?.isApproved(address, stakingContractAddress);
     if (!isApproved) {
@@ -247,17 +248,16 @@ const Stake: NextPage = () => {
                   style={{ width: '190px', height: '190px' }}
                 />
 
-<h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-{nft.metadata.name}
-          </h2>
-
+              <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+                  {nft.metadata.name}
+              </h2>
 
                 <Web3Button
                   contractAddress={stakingContractAddress}
-                  action={() => stakeNft(nft.metadata.id)}
+                  action={() => stakeNft([nft.metadata.id])}
                 ><h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-                Goto Work
-              </h2>
+                   Goto Work
+                </h2>
                   
                 </Web3Button>
               </div>
