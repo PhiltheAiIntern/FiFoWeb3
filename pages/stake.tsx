@@ -253,7 +253,7 @@ const Stake: NextPage = () => {
               </h2>
 
     
-<Web3Button
+              <Web3Button
   contractAddress={stakingContractAddress}
   action={() => stakeNft([nft.metadata.id] as string[])} // Use a type assertion
 >
