@@ -62,7 +62,7 @@ const Stake: NextPage = () => {
     if (!isApproved) {
       await nftDropContract?.setApprovalForAll(stakingContractAddress, true);
     }
-    await contract?.call("stake", [[id]]);
+    await contract?.call("stake", [id]);
     
   }
   
@@ -257,7 +257,7 @@ const Stake: NextPage = () => {
     
               <Web3Button
                   contractAddress={stakingContractAddress}
-                  action={() => stakeNft(nft.metadata.id)}
+                  action={() => stakeNft([nft.metadata.id] as string)}
                 >
                   <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
                     Goto Work
