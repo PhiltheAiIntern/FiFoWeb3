@@ -28,7 +28,13 @@ const Stake: NextPage = () => {
   const { data: tokenBalance } = useTokenBalance(tokenContract, address);
   const [claimableRewards, setClaimableRewards] = useState<BigNumber>();
   const { data: stakedTokens } = useContractRead(contract, "getStakeInfo", [address]);
+  const [inputValue, setInputValue] = useState(""); // Define inputValue state
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value.replace(/"/g, '').replace(/ /g, '')); // Remove double quotes and spaces and update inputValue
+  };
   
+
 
   // Define stakedTokenIdsBigNumbers
   let stakedTokenIdsBigNumbers: BigNumber[] | undefined;
@@ -66,6 +72,49 @@ const Stake: NextPage = () => {
     
   }
   
+  const stakeNftFromInput = async () => {
+    // Remove any non-numeric characters from the input value
+    const cleanedInputValue = inputValue.replace(/[^0-9,]/g, '');
+  
+    // Split the cleaned input string into an array of strings
+    const idStrings = cleanedInputValue.split(',');
+  
+    // Convert idStrings to an array of strings containing valid numbers
+    const validIds = idStrings.map((str) => {
+      const num = parseInt(str.trim(), 10); // Convert each string to a number
+      if (!isNaN(num)) {
+        return num.toString(); // Convert the number to a string
+      }
+      return null; // Return null for invalid inputs
+    }).filter((num) => num !== null); // Remove null values
+  
+    if (validIds.length === 0) {
+      console.error("No valid IDs to stake.");
+      return;
+    }
+  
+    await stakeNfts(validIds);
+  };
+  
+  async function stakeNfts(ids) {
+    if (!address) return;
+    console.log("Staking NFT with ID:", ids); // Log the ID
+  
+    const isApproved = await nftDropContract?.isApproved(address, stakingContractAddress);
+    if (!isApproved) {
+      await nftDropContract?.setApprovalForAll(stakingContractAddress, true);
+    }
+    await contract?.call("stake", [ids]);
+  }
+  
+  
+
+  
+  
+  
+  
+
+
   if (isLoading) {
     return <div>...just wait retar...</div>;
   }
@@ -122,11 +171,8 @@ const Stake: NextPage = () => {
                           {tokenBalance?.symbol}
                        
                        
-                </b>{" "}
+                      </b>{" "}
                        
-                      
-
-                      
                     </h2>
                     
                   </div>
@@ -134,7 +180,7 @@ const Stake: NextPage = () => {
                 </div>
                 <br />
 
-<div>
+                <div>
           <Web3Button
             action={(contract) => contract.call("claimRewards")}
             contractAddress={stakingContractAddress}
@@ -171,12 +217,47 @@ const Stake: NextPage = () => {
             </h2>
           </Web3Button>
           </div>
-          
+          <br />
+
+          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+      Enter ids followed by a comma
+                    </h2>
+
+                <br />
+
+      <div className={styles.tokenGrid}>
+  <div className={styles.tokenItem}>
+    <h2 className={styles.nakaPixelText} style={{ color: '#66ff00' }}>Custom Staking</h2>
+    <div className={styles.tokenValue}>
+      <input
+        type="text"
+        placeholder="Enter value"
+        value={inputValue}
+        onChange={handleInputChange}
+        style={{ marginRight: '10px' }} // Add right margin to the input
+      />
+     
+      <Web3Button
+        contractAddress={stakingContractAddress}
+        action={() => stakeNfts(inputValue.split(',').map(id => parseInt(id.trim())))}
+        style={{ marginLeft: '10px' }} // Add left margin to the button
+      >
+        <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+          Custom 
+        </h2>
+      </Web3Button>
+    </div>
+  </div>
+</div>
+
+<br />
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
             Phils in the Mine
             </h2>
+
+
 
 <br />
 
@@ -228,7 +309,7 @@ const Stake: NextPage = () => {
                 const nftIdsToStake = ownedNFTIds.map((id) => parseInt(id));
 
                 // Stake all owned NFTs
-                await contract?.call("stake", [nftIdsToStake]);
+                await contract?.call("stake", (nftIdsToStake));
               }}
               contractAddress={stakingContractAddress}
             >

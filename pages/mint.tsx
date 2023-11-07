@@ -29,6 +29,13 @@ const Mint: NextPage = () => {
                     </h2>
       <hr className={`${styles.smallDivider} ${styles.detailPageHr}`} />
 
+      <a href="https://looksrare.org/collections/0x75a332E626a0B421C3c5C405474b9727aDB5dDff?queryID=19603e03ef4ae0e029229b900ce0b1be" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#ffffff', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00'}}>
+          Naka Phlip • Looks Rare
+          </a>
+          <a href="https://x2y2.io/collection/nakaphlip/items" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#ffffff', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00'}}>
+          Naka Phlip • X2Y2
+          </a>
+<br />
       <div className="image-container" style={{
     backgroundImage: `url('https://ipfs.io/ipfs/QmUHz43wSKm9UorWdjTTWU6EUZFRsj5b9SwCCqo9JpBsRa')`,
     backgroundSize: 'contain', // Try using 'contain'
