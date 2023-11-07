@@ -43,6 +43,7 @@ const Home: NextPage = () => {
           width: '100%',
           height: '50vh', // Adjust the height as needed
       }}></div>
+<br />
 
       <div id="container05" className="style1 container default">
         <div className="wrapper">
