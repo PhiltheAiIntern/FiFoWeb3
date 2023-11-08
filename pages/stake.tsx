@@ -33,8 +33,6 @@ const Stake: NextPage = () => {
   const handleInputChange = (event) => {
     setInputValue(event.target.value.replace(/"/g, '').replace(/ /g, '')); // Remove double quotes and spaces and update inputValue
   };
-  
-
 
   // Define stakedTokenIdsBigNumbers
   let stakedTokenIdsBigNumbers: BigNumber[] | undefined;
@@ -107,14 +105,6 @@ const Stake: NextPage = () => {
     await contract?.call("stake", [ids]);
   }
   
-  
-
-  
-  
-  
-  
-
-
   if (isLoading) {
     return <div>...just wait retar...</div>;
   }
@@ -126,7 +116,6 @@ const Stake: NextPage = () => {
       <h2 style={{ color: 'white', textAlign: 'center', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontSize: '3rem', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
             Stake FiFo Phil
           </h2>
-
 
       <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
@@ -218,37 +207,45 @@ const Stake: NextPage = () => {
           </Web3Button>
           </div>
           <br />
+          <br />
+         
 
-          <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+      
+          <h2 style={{ color: '#66ff00', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300' }}>
+          Custom Staking
+                    </h2>
+    
+    <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
       Enter ids followed by a comma
                     </h2>
 
                 <br />
 
-      <div className={styles.tokenGrid}>
-  <div className={styles.tokenItem}>
-    <h2 className={styles.nakaPixelText} style={{ color: '#66ff00' }}>Custom Staking</h2>
+    <br />
     <div className={styles.tokenValue}>
-      <input
-        type="text"
-        placeholder="Enter value"
-        value={inputValue}
-        onChange={handleInputChange}
-        style={{ marginRight: '10px' }} // Add right margin to the input
-      />
-     
-      <Web3Button
-        contractAddress={stakingContractAddress}
-        action={() => stakeNfts(inputValue.split(',').map(id => parseInt(id.trim())))}
-        style={{ marginLeft: '10px' }} // Add left margin to the button
-      >
-        <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-          Custom 
-        </h2>
-      </Web3Button>
-    </div>
+  <div style={{ marginRight: '10px' }}>
+    <input
+      type="text"
+      placeholder="Enter value"
+      value={inputValue}
+      onChange={handleInputChange}
+    />
+  </div>
+<br />
+  <div style={{ marginLeft: '0px' }}>
+    <Web3Button
+      contractAddress={stakingContractAddress}
+      action={() => stakeNfts(inputValue.split(',').map(id => parseInt(id.trim())))}
+    >
+      <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+        Stake 
+      </h2>
+    </Web3Button>
   </div>
 </div>
+
+  
+
 
 <br />
 
