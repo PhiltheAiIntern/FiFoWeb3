@@ -42,7 +42,7 @@ const Mint: NextPage = () => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
     width: '100%',
-    height: '50vh', // Adjust the height as needed
+    height: 'vh', // Adjust the height as needed
 }}></div>
 
 <br />
