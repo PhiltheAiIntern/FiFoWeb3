@@ -14,7 +14,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <ConnectWallet/>
       <br />
-      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
       FiFo Labs
       </h2>
       <br />
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       Presents
       </h2>
             
-      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '4.75rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+      <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
       Naka Phlip
       </h2>
       <br />
@@ -95,7 +95,7 @@ const Home: NextPage = () => {
         
 </div>
 <br />
-<h2 style={{ color: 'white', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300' }}>
+<h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.25rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300' }}>
 FiFo Phil works so You dont have too! S2E $FGem
           </h2>
 
@@ -172,7 +172,7 @@ height: '50vh', // Adjust the height as needed
 
 
 <br />
-<h2 style={{ color: 'white', textAlign: 'center', fontSize: '5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+<h2 style={{ color: 'white', textAlign: 'center', fontSize: '4rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
 WE ARE Fifo LABs
       </h2>
 

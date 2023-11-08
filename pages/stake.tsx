@@ -230,26 +230,35 @@ const Stake: NextPage = () => {
 
           <br />
           <br />
-           
+           <div>
                     <h2 style={{ color: '#66ff00', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300' }}>
                         Custom Staking
                     </h2>
-    
-                    <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+    <br />
+                    <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #020052' }}>
                         Enter ids followed by a comma
                     </h2>
-
+            </div>
           <br />
 
-    <br />
                       <div className={styles.tokenValue}>
                           <div style={{ marginLeft: '0px'  }}>
-                            <input
+                          <input
                               type="text"
-                              placeholder="enter Phil IDs to Stake"
+                              placeholder="Enter Phil IDs to Stake"
                               value={inputValue}
                               onChange={handleInputChange}
-                            />
+                              style={{
+                                color: '#020052',
+                                fontFamily: 'NakaPixel, sans-serif',
+                                margin: 0,
+                                letterSpacing: '-0.25rem',
+                                width: '100%',
+                                fontSize: '1.5rem',
+                                fontWeight: 300,
+                                textShadow: '0rem 0rem 0.75rem #66ff00',
+                              }}
+                                />
                           </div>
 <br />
               <div style={{ marginLeft: '0px' }}>
@@ -268,12 +277,23 @@ const Stake: NextPage = () => {
 
           <div className={styles.tokenValue}>
               <div style={{ marginLeft: '0px' }}>
-                <input
-                  type="text"
-                  placeholder="enter Phil IDs to Withdraw"
-                  value={withdrawalInputValue}
-                  onChange={handleWithdrawalInputChange}
-                />  
+              <input
+  type="text"
+  placeholder="Enter Phil IDs to Withdraw"
+  value={withdrawalInputValue}
+  onChange={handleWithdrawalInputChange}
+  style={{
+    color: '#020052',
+    fontFamily: 'NakaPixel, sans-serif',
+    margin: 0,
+    letterSpacing: '-0.25rem',
+    width: '100%',
+    fontSize: '1.5rem',
+    fontWeight: 300,
+    textShadow: '0rem 0rem 0.75rem #66ff00',
+  }}
+/>
+
               </div>
           </div>
 <br />
