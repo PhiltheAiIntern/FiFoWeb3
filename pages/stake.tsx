@@ -34,6 +34,12 @@ const Stake: NextPage = () => {
     setInputValue(event.target.value.replace(/"/g, '').replace(/ /g, '')); // Remove double quotes and spaces and update inputValue
   };
 
+  const [withdrawalInputValue, setWithdrawalInputValue] = useState("");
+
+  const handleWithdrawalInputChange = (event) => {
+    setWithdrawalInputValue(event.target.value.replace(/"/g, "").replace(/ /g, ""));
+  };
+
   // Define stakedTokenIdsBigNumbers
   let stakedTokenIdsBigNumbers: BigNumber[] | undefined;
 
@@ -108,6 +114,21 @@ const Stake: NextPage = () => {
   if (isLoading) {
     return <div>...just wait retar...</div>;
   }
+
+  async function withdrawNFTs() {
+    if (!address) return;
+    console.log("Withdrawing NFTs with IDs:", withdrawalInputValue);
+  
+    const isApproved = await nftDropContract?.isApproved(address, stakingContractAddress);
+    if (!isApproved) {
+      await nftDropContract?.setApprovalForAll(stakingContractAddress, true);
+    }
+  
+    // Parse the withdrawalInputValue and process the withdrawal
+    const idsToWithdraw = withdrawalInputValue.split(",").map((id) => parseInt(id.trim()));
+    await contract?.call("withdraw", [idsToWithdraw]);
+  }
+
 
   return (
     <div className={styles.container}>
@@ -206,49 +227,73 @@ const Stake: NextPage = () => {
             </h2>
           </Web3Button>
           </div>
-          <br />
-          <br />
-         
 
-      
-          <h2 style={{ color: '#66ff00', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300' }}>
-          Custom Staking
+          <br />
+          <br />
+           
+                    <h2 style={{ color: '#66ff00', textAlign: 'center', fontSize: '2rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300' }}>
+                        Custom Staking
                     </h2>
     
-    <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
-      Enter ids followed by a comma
+                    <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
+                        Enter ids followed by a comma
                     </h2>
 
-                <br />
+          <br />
 
     <br />
-    <div className={styles.tokenValue}>
-  <div style={{ marginRight: '10px' }}>
-    <input
-      type="text"
-      placeholder="Enter value"
-      value={inputValue}
-      onChange={handleInputChange}
-    />
-  </div>
+                      <div className={styles.tokenValue}>
+                          <div style={{ marginLeft: '0px'  }}>
+                            <input
+                              type="text"
+                              placeholder="enter Phil IDs to Stake"
+                              value={inputValue}
+                              onChange={handleInputChange}
+                            />
+                          </div>
 <br />
-  <div style={{ marginLeft: '0px' }}>
-    <Web3Button
-      contractAddress={stakingContractAddress}
-      action={() => stakeNfts(inputValue.split(',').map(id => parseInt(id.trim())))}
-    >
-      <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-        Stake 
-      </h2>
-    </Web3Button>
-  </div>
+              <div style={{ marginLeft: '0px' }}>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <Web3Button
+                              contractAddress={stakingContractAddress}
+                              action={() => stakeNfts(inputValue.split(',').map(id => parseInt(id.trim())))}>
+                              <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+                                Stake 
+                              </h2>
+                            </Web3Button>
+              </div>
+              </div>
+
+<br />
+
+          <div className={styles.tokenValue}>
+              <div style={{ marginLeft: '0px' }}>
+                <input
+                  type="text"
+                  placeholder="enter Phil IDs to Withdraw"
+                  value={withdrawalInputValue}
+                  onChange={handleWithdrawalInputChange}
+                />  
+              </div>
+          </div>
+<br />
+
+              <div style={{ marginLeft: '0px' }}>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+  <Web3Button
+    contractAddress={stakingContractAddress}
+    action={withdrawNFTs}
+  >
+    <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.1rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
+      Withdraw
+    </h2>
+  </Web3Button>
 </div>
 
-  
-
+              </div>
+          </div>
 
 <br />
-
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
             Phils in the Mine
