@@ -13,7 +13,7 @@ const Mint: NextPage = () => {
       <ConnectWallet/>
       <br />
         <h2 style={{ color: 'white', textAlign: 'center', fontSize: '3rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-        Naka Phlip Mint
+        Naka Twins Mint
           </h2>
 <br />
           <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '0rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
@@ -30,10 +30,10 @@ const Mint: NextPage = () => {
       <hr className={`${styles.smallDivider} ${styles.detailPageHr}`} />
 
       <a href="https://looksrare.org/collections/0x75a332E626a0B421C3c5C405474b9727aDB5dDff?queryID=19603e03ef4ae0e029229b900ce0b1be" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#ffffff', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00'}}>
-          Naka Phlip • Looks Rare
+          Naka Twin on • Looks Rare
           </a>
           <a href="https://x2y2.io/collection/nakaphlip/items" target="_blank" className={styles.h1} style={{ textDecoration: 'none', color: '#ffffff', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.15rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00'}}>
-          Naka Phlip • X2Y2
+          Naka Twin on • X2Y2
           </a>
 <br />
       <div className="image-container" style={{
@@ -44,7 +44,6 @@ const Mint: NextPage = () => {
     width: '100%',
     height: 'vh', // Adjust the height as needed
 }}></div>
-
 <br />
 <br />
 <div style={{ display: 'flex', gap: '10px' }}>
