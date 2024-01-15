@@ -60,7 +60,7 @@ const Mint: NextPage = () => {
               }}
             >
               <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-              Mint 1 Phlips
+              Mint 1 Twin
                 </h2>
 
       </Web3Button>
@@ -80,7 +80,7 @@ const Mint: NextPage = () => {
               }}
             >
               <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-              Mint 2 Phlips
+              Mint 2 Twins
                 </h2>
 
       </Web3Button>
@@ -100,14 +100,14 @@ const Mint: NextPage = () => {
               }}
             >
               <h2 style={{ color: '#020052', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-0.25rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #66ff00' }}>
-              Mint 3 Phlips
+              Mint 3 Twins
                 </h2>
 
       </Web3Button>
 </div>
       <br />
       <h2 style={{ color: 'white', textAlign: 'center', fontSize: '1.5rem', fontFamily: 'NakaPixel, sans-serif', margin: '0', letterSpacing: '-.025rem', width: '100%', fontWeight: '300', textShadow: '0rem 0rem 0.75rem #ffffff' }}>
-      Follow link to mint custom # of Phlips.
+      Follow link to mint custom # of Twins.
                     </h2>
 <br />
               <div id="container05" className="style1 container default">
